@@ -1,5 +1,5 @@
 .profile__columns {
-  max-width: 68.75%;
+  width: 68.75%;
   display: flex;
   margin: auto;
   flex-wrap: wrap;
@@ -80,8 +80,8 @@
 }
 
 .add-button {
-  max-width: 150px;
-  max-height: 50px;
+  width: 150px;
+  height: 50px;
   background-color: transparent;
   padding: 0;
   border: 0;
@@ -145,18 +145,27 @@
     text-align: center;
   }
   .add-button {
-    min-width: 282px;
-    max-height: 50px;
+    width: 90%;
+    height: 50px;
     margin: auto;
   }
   .add-button__image {
-    min-width: 282px;
-    max-height: 50px;
+    width: 100%;
+    height: 50px;
   }
 }
 
 @media screen and (max-width: 320px) {
   .profile__columns {
-    max-width: 282px;
+    width: 282px;
+  }
+  .add-button {
+    width: 100%;
+    height: 50px;
+    margin: 0;
+  }
+  .add-button__image {
+    width: 100%;
+    height: 50px;
   }
 }
