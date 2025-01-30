@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./pages/index.css" />
     <link rel="shortcut icon" href="favicon.ico" />
   </head>
-  <body>
+  <body class="body">
     <div class="page">
       <header class="header">
         <img
@@ -23,14 +23,48 @@
         />
         <hr class="header__line" />
       </header>
+
       <main class="container">
-        <section class="profile" id="profile"></section>
-        <section class="elements" id="elements"></section>
+        <section class="profile" id="profile">
+          <div class="profile__columns">
+            <div class="profile__column">
+              <div class="profile__image">
+                <img
+                  src="/images/profile/Avatar.png"
+                  alt="Avatar del perfil"
+                  class="profile__avatar"
+                />
+              </div>
+            </div>
+            <div class="profile__column">
+              <div class="profile__info">
+                <h1 class="profile__title">Jacques Cousteau</h1>
+                <button class="profile__edit-button" type="button">
+                  <img
+                    src="/images/profile/Edit.png"
+                    alt="Botón editar perfil"
+                    class="profile__edit-button-image"
+                  />
+                </button>
+                <h2 class="profile__subtitle">Explorador</h2>
+              </div>
+            </div>
+
+            <button class="add-button" type="button">
+              <img
+                src="/images/profile/Add.png"
+                alt="Botón agregar perfil"
+                class="add-button__image"
+              />
+            </button>
+          </div>
+        </section>
       </main>
+
       <footer class="footer" id="footer">
         <p class="footer__copyright">&copy; 2024 Around The U.S.</p>
       </footer>
     </div>
-    <script src="script.js"></script>
+    <script src="scripts/script.js"></script>
   </body>
 </html>
