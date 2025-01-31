@@ -9,12 +9,52 @@
       content="Galería interactiva en la que los usuarios pueden añadir, eliminar o dar me gusta a las fotos."
     />
     <meta name="author" content="Leonardo Jurado" />
-    <meta name="keywords" content="Galería, Interactivo, Alrededor, EE.UU." />
+    <meta name="keywords" content="Galería, Interactiva, Alrededor, EE.UU." />
     <link rel="stylesheet" href="./pages/index.css" />
     <link rel="shortcut icon" href="favicon.ico" />
   </head>
   <body class="body">
     <div class="page">
+      <div></div>
+
+      <section class="popup" id="popup">
+        <div class="popup__container">
+          <form class="form">
+            <button class="form__close-button" type="button">
+              <img
+                class="form__close-button-image"
+                src="./images/profile/Close.png"
+                alt="Boton para cerrar ventana"
+              />
+            </button>
+            <fieldset class="form__fieldset">
+              <h2 class="form__title">Editar Perfil</h2>
+              <input
+                class="form__input form__input_el_name"
+                type="text"
+                placeholder="Nombre"
+                required
+                id="name"
+                name="name"
+                minlength="2"
+                maxlength="40"
+              />
+              <input
+                class="form__input form__input_el_about"
+                type="text"
+                placeholder="Acerca de mi"
+                required
+                id="about"
+                name="about"
+                minlength="2"
+                maxlength="200"
+              />
+              <button class="form__save-button" type="submit">Guardar</button>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+
       <header class="header">
         <img
           src="./images/Lead.svg"
@@ -37,7 +77,7 @@
             </div>
             <div class="profile__column">
               <div class="profile__info">
-                <h1 class="profile__title">Jacques Cousteau</h1>
+                <h1 class="profile__name">Jacques Cousteau</h1>
                 <button class="profile__edit-button" type="button">
                   <img
                     src="/images/profile/Edit.png"
@@ -45,7 +85,7 @@
                     class="profile__edit-button-image"
                   />
                 </button>
-                <h2 class="profile__subtitle">Explorador</h2>
+                <p class="profile__description">Explorador</p>
               </div>
             </div>
             <button class="add-button" type="button">
@@ -57,7 +97,6 @@
             </button>
           </div>
         </section>
-
         <section class="cards">
           <ul class="cards__content">
             <li class="card">
@@ -67,7 +106,7 @@
                 class="card__image"
               />
               <div class="card__info">
-                <p class="card__title">Bosque de Salt Lake</p>
+                <p class="card__title">Lago di SaltLake</p>
                 <button class="card__like-button"></button>
               </div>
             </li>
@@ -122,7 +161,7 @@
                 class="card__image"
               />
               <div class="card__info">
-                <p class="card__title">Playa Punta Soldado</p>
+                <p class="card__title">Punta Soldado</p>
                 <button class="card__like-button"></button>
               </div>
             </li>

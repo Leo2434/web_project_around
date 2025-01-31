@@ -49,6 +49,7 @@
   background-image: url("../images/cards/like.svg");
   background-color: transparent;
   background-repeat: no-repeat;
+  background-size: 100% 100%; /*Para que se expanda la imagen*/
   padding: 0;
   border: 0;
 }
