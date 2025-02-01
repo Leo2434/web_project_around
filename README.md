@@ -58,16 +58,12 @@ Se tomo como base los diseños de las distintas resoluciones del editor gráfico
 
 ## Técnologías utilizadas:
 
-<img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-plain.svg" title="HTML5" alt="HTML" width="40" height="40"/>
-&nbsp;
-<img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-plain.svg" title="CSS3" alt="CSS" width="40" height="40"/>
-&nbsp;
+<img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-plain.svg" title="HTML5" alt="HTML" width="40" height="40"/>&nbsp;
+<img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-plain.svg" title="CSS3" alt="CSS" width="40" height="40"/>&nbsp;
 <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" title="JS" alt="JavaScript" width="40" height="40"/>
 &nbsp;
-<img src="images/dom-logo.PNG" border="0"  title="DOM" alt="DOM" width="40" height="40"/>
-&nbsp;
-<img src="https://github.com/devicons/devicon/blob/master/icons/git/git-plain.svg" title="Git" alt="Git" width="40" height="40"/>
-&nbsp;
+<img src="images/dom-logo.PNG" border="0"  title="DOM" alt="DOM" width="40" height="40"/>&nbsp;
+<img src="https://github.com/devicons/devicon/blob/master/icons/git/git-plain.svg" title="Git" alt="Git" width="40" height="40"/>&nbsp;
 
 ---
 
