@@ -14,9 +14,3 @@
 .popup_opened {
   display: flex;
 }
-
-@media screen and (min-width: 320px) and (max-width: 650px) {
-  .popup__container {
-    width: 282px;
-  }
-}
