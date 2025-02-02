@@ -1,7 +1,7 @@
-let formElement = document.querySelector(".form");
-let popup = document.querySelector(".popup");
-let editProfileButton = document.querySelector(".profile__edit-button");
-let closeProfileButton = document.querySelector(".form__close-button");
+const formElement = document.querySelector(".form");
+const popup = document.querySelector(".popup");
+const editProfileButton = document.querySelector(".profile__edit-button");
+const closeProfileButton = document.querySelector(".form__close-button");
 
 function handleOpenProfilePopup() {
   let name = document.querySelector(".profile__name").textContent;
