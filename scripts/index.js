@@ -1,43 +1,76 @@
-const formElement = document.querySelector(".form");
-const popup = document.querySelector(".popup");
-const editProfileButton = document.querySelector(".profile__edit-button");
-const closeProfileButton = document.querySelector(".form__close-button");
+const profilePopup = document.querySelector("#profile-popup");
+// const cardPopup = document.querySelector("#card-popup");
+const profileForm = document.querySelector("#profile-form");
+// const cardForm = document.querySelector("#card-Form");
+const openProfileButton = document.querySelector("#open-profile-button");
+// const openCardButton = document.querySelector("#open-card-button");
+const closeProfileButton = document.querySelector("#close-profile-button");
+// const closeCardButton = document.querySelector("#close-card-button");
 
-function handleOpenProfilePopup() {
+const initialCards = [
+  {
+    name: "Valle de Yosemite",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/yosemite.jpg",
+  },
+  {
+    name: "Lago Louise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg",
+  },
+  {
+    name: "Montañas Calvas",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/bald-mountains.jpg",
+  },
+  {
+    name: "Latemar",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/latemar.jpg",
+  },
+  {
+    name: "Parque Nacional de la Vanoise",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lago.jpg",
+  },
+];
+
+function handleOpenPopup(popupElement) {
+  popupElement.classList.add("popup_opened");
+}
+function handleClosePopup(popupElement) {
+  popupElement.classList.remove("popup_opened");
+}
+
+openProfileButton.addEventListener("click", function () {
   let name = document.querySelector(".profile__name").textContent;
   let job = document.querySelector(".profile__description").textContent;
-  formElement.querySelector(".form__input_el_name").value = name;
-  formElement.querySelector(".form__input_el_about").value = job;
-  popup.classList.add("popup_opened");
-}
+  profileForm.querySelector(".form__input_el_name").value = name;
+  profileForm.querySelector(".form__input_el_about").value = job;
+  handleOpenPopup(profilePopup);
+});
 
-function handleCloseProfilePopup() {
-  popup.classList.remove("popup_opened");
-}
+// openCardButton.addEventListener("click", function () {
+//   handleOpenPopup(popup);
+// });
+
+closeProfileButton.addEventListener("click", function () {
+  handleClosePopup(profilePopup);
+});
+
+// closeCardButton.addEventListener("click", function () {
+//   handleClosePopup(popup);
+// });
 
 function handleProfileFormSubmit(evt) {
-  // Esta línea impide que el navegador
-  // entregue el formulario en su forma predeterminada.
   evt.preventDefault();
-  // Una vez hecho esto, podemos definir nuestra propia forma de entregar el formulario.
 
-  // Busquemos los campos del formulario en el DOM
-  let nameInput = formElement.querySelector(".form__input_el_name");
-  let jobInput = formElement.querySelector(".form__input_el_about");
-  // Obtén los valores de cada campo desde la propiedad de valor correspondiente
-  let nameInputValue = nameInput.value;
-  let jobInputValue = jobInput.value;
-  // Selecciona los elementos donde se introducirán los valores de los campos
-  let name = document.querySelector(".profile__name");
-  let job = document.querySelector(".profile__description");
-  // Inserta nuevos valores utilizando el textContent
-  // propiedad del método querySelector()
-  name.textContent = nameInputValue;
-  job.textContent = jobInputValue;
-  // Cierra el popup
-  handleCloseProfilePopup();
+  let nameInput = profileForm.querySelector(".form__input_el_name").value;
+  let jobInput = profileForm.querySelector(".form__input_el_about").value;
+
+  document.querySelector(".profile__name").textContent = nameInput;
+  document.querySelector(".profile__description").textContent = jobInput;
+
+  handleClosePopup(profilePopup);
 }
 
-editProfileButton.addEventListener("click", handleOpenProfilePopup);
-closeProfileButton.addEventListener("click", handleCloseProfilePopup);
-formElement.addEventListener("submit", handleProfileFormSubmit);
+profileForm.addEventListener("submit", handleProfileFormSubmit);

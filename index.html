@@ -15,10 +15,14 @@
   </head>
   <body class="body">
     <div class="page">
-      <section class="popup" id="popup">
+      <section class="popup" id="profile-popup">
         <div class="popup__container">
-          <form class="form">
-            <button class="form__close-button" type="button">
+          <form class="form" id="profile-form">
+            <button
+              class="form__close-button"
+              type="button"
+              id="close-profile-button"
+            >
               <img
                 class="form__close-button-image"
                 src="./images/profile/Close.png"
@@ -76,7 +80,11 @@
             <div class="profile__column">
               <div class="profile__info">
                 <h1 class="profile__name">Jacques Cousteau</h1>
-                <button class="profile__edit-button" type="button">
+                <button
+                  class="profile__edit-button"
+                  type="button"
+                  id="open-profile-button"
+                >
                   <img
                     src="./images/profile/Edit.png"
                     alt="Botón editar perfil"
