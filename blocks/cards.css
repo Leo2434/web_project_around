@@ -15,13 +15,35 @@
   border-radius: 10px;
   background-color: #fff;
   box-sizing: border-box;
-  overflow: hidden;
+  position: relative;
 }
 
 .card__image {
   width: 282px;
   height: 282px;
   object-fit: fill;
+}
+
+.card__trash-button {
+  width: 18px;
+  height: 19px;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.card__trash-button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  transform: scale(1.3);
+}
+
+.card__trash-button-image {
+  width: 18px;
+  height: 19px;
 }
 
 .card__info {
@@ -50,13 +72,18 @@
   background-color: transparent;
   background-repeat: no-repeat;
   background-size: 100% 100%; /*Para que se expanda la imagen*/
-  padding: 0;
   border: 0;
+  padding: 0;
 }
 
 .card__like-button:hover {
   cursor: pointer;
   opacity: 0.7;
+  transform: scale(1.3);
+}
+
+.card__black-like-button {
+  background-image: url("../images/cards/black-like.svg");
 }
 
 @media screen and (min-width: 651px) and (max-width: 950px) {

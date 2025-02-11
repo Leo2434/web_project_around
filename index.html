@@ -15,6 +15,25 @@
   </head>
   <body class="body">
     <div class="page">
+      <template class="template">
+        <li class="card">
+          <img src=" " alt="" class="card__image" />
+          <button class="card__trash-button">
+            <img
+              src="./images/cards/trash.svg"
+              alt="Imagen del boton para eliminar tarjeta"
+              class="card__trash-button-image"
+            />
+          </button>
+          <div class="card__info">
+            <p class="card__title"></p>
+            <button class="card__like-button"></button>
+          </div>
+        </li>
+      </template>
+
+      <!-- src="./images/cards/Bosque-de-Salt-Lake.png " -->
+
       <section class="popup" id="profile-popup">
         <div class="popup__container">
           <form class="form" id="profile-form">
@@ -104,74 +123,7 @@
           </div>
         </section>
         <section class="cards">
-          <ul class="cards__content">
-            <li class="card">
-              <img
-                src="./images/cards/Bosque-de-Salt-Lake.png "
-                alt="Foto del Bosque de Salt Lake"
-                class="card__image"
-              />
-              <div class="card__info">
-                <p class="card__title">Lago di SaltLake</p>
-                <button class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/cards/Cataratas-de-Lucia.png"
-                alt="Foto de las Cataratas de Lucía"
-                class="card__image"
-              />
-              <div class="card__info">
-                <p class="card__title">Cataratas de Lucía</p>
-                <button class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/cards/Cañon-del-Antílope-Inferior.png"
-                alt="Foto del Cañón del Antílope Inferior"
-                class="card__image"
-              />
-              <div class="card__info">
-                <p class="card__title">Cañón del Antílope Inferior</p>
-                <button class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/cards/Gran-Cañon.png"
-                alt="Foto del Gran Cañon"
-                class="card__image"
-              />
-              <div class="card__info">
-                <p class="card__title">Gran Cañon</p>
-                <button class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/cards/Playa-de-California.jpg"
-                alt="Foto de la Playa de California"
-                class="card__image"
-              />
-              <div class="card__info">
-                <p class="card__title">Playa de California</p>
-                <button class="card__like-button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/cards/Punta-Soldado.png"
-                alt="Foto de la Playa Punta Soldado"
-                class="card__image"
-              />
-              <div class="card__info">
-                <p class="card__title">Punta Soldado</p>
-                <button class="card__like-button"></button>
-              </div>
-            </li>
-          </ul>
+          <ul class="cards__content"></ul>
         </section>
       </main>
       <footer class="footer" id="footer">
