@@ -1,13 +1,15 @@
-const profilePopup = document.querySelector("#profile-popup");
-// const cardPopup = document.querySelector("#card-popup");
-const profileForm = document.querySelector("#profile-form");
-// const cardForm = document.querySelector("#card-Form");
-const openProfileButton = document.querySelector("#open-profile-button");
-// const openCardButton = document.querySelector("#open-card-button");
-const closeProfileButton = document.querySelector("#close-profile-button");
-// const closeCardButton = document.querySelector("#close-card-button");
 const cardTemplate = document.querySelector(".template");
 const cardsContent = document.querySelector(".cards__content");
+const profilePopup = document.querySelector("#profile-popup");
+const profileForm = document.querySelector("#profile-form");
+const profileOpenBtn = document.querySelector("#profile-open-btn");
+const profileCloseBtn = document.querySelector("#profile-close-btn");
+const cardPopup = document.querySelector("#card-popup");
+const cardForm = document.querySelector("#card-form");
+const cardOpenBtn = document.querySelector("#card-open-btn");
+const cardCloseBtn = document.querySelector("#card-close-btn");
+const imagePopup = document.querySelector("#image-popup");
+const imageCloseBtn = document.querySelector("#image-close-btn");
 
 const initialCards = [
   {
@@ -38,71 +40,102 @@ const initialCards = [
 
 function loadInitialCards(initialCards) {
   initialCards.forEach(function (item) {
-    createCard(item.name, item.link);
+    const card = createCard(item.name, item.link);
+    cardsContent.append(card);
   });
 }
 
-function createCard(name, link) {
+function createCard(title, link) {
   const cardElement = cardTemplate
     .cloneNode(true)
     .content.querySelector(".card");
+  cardElement.querySelector(".card__title").textContent = title;
   const cardImage = cardElement.querySelector(".card__image");
   cardImage.src = link;
-  cardImage.alt = name;
-  cardElement.querySelector(".card__title").textContent = name;
+  cardImage.alt = title;
   cardElement
-    .querySelector(".card__like-button")
+    .querySelector(".card__like-btn")
     .addEventListener("click", function (evt) {
-      evt.target.classList.toggle("card__black-like-button");
+      evt.target.classList.toggle("card__black-like-btn");
     });
+
   // evt.target.style.backgroundImage = "url('../images/cards/black-like.svg')";
-  // Esta forma funciona pero no permite volver a poner el corazon blanco
+  // Esta forma tambien funciona pero no permite alternar la url con cada click
 
-  cardImage.addEventListener("click", function () {
-    handleOpenPopup(profilePopup); //cambiar para aparecer el popup de la imagen
+  cardElement
+    .querySelector(".card__trash-btn")
+    .addEventListener("click", function (evt) {
+      const cardItem = evt.target.closest(".card");
+      cardItem.remove();
+    });
+
+  cardImage.addEventListener("click", function (evt) {
+    const link = evt.target.parentElement.querySelector(".card__image").src;
+    imagePopup.querySelector(".popup__expanded-image").src = link;
+
+    const title =
+      evt.target.parentElement.querySelector(".card__title").textContent;
+    imagePopup.querySelector(".popup__image-title").textContent = title;
+
+    handleTogglePopup(imagePopup);
   });
-  cardsContent.prepend(cardElement);
+  return cardElement;
 }
 
-function handleOpenPopup(popupElement) {
-  popupElement.classList.add("popup_opened");
+function handleTogglePopup(popupElement) {
+  popupElement.classList.toggle("popup_opened");
 }
 
-function handleClosePopup(popupElement) {
-  popupElement.classList.remove("popup_opened");
-}
-
-openProfileButton.addEventListener("click", function () {
-  let name = document.querySelector(".profile__name").textContent;
-  let job = document.querySelector(".profile__description").textContent;
-  profileForm.querySelector(".form__input_el_name").value = name;
-  profileForm.querySelector(".form__input_el_about").value = job;
-  handleOpenPopup(profilePopup);
+profileOpenBtn.addEventListener("click", function () {
+  const name = document.querySelector(".profile__name").textContent;
+  const about = document.querySelector(".profile__about").textContent;
+  profileForm.querySelector("#input-profile-name").value = name;
+  profileForm.querySelector("#input-profile-about").value = about;
+  handleTogglePopup(profilePopup);
 });
 
-// openCardButton.addEventListener("click", function () {
-//   handleOpenPopup(popup);
-// });
-
-closeProfileButton.addEventListener("click", function () {
-  handleClosePopup(profilePopup);
+profileCloseBtn.addEventListener("click", function () {
+  handleTogglePopup(profilePopup);
 });
 
-// closeCardButton.addEventListener("click", function () {
-//   handleClosePopup(popup);
-// });
+cardOpenBtn.addEventListener("click", function () {
+  handleTogglePopup(cardPopup);
+});
+
+cardCloseBtn.addEventListener("click", function () {
+  cardForm.querySelector("#input-card-title").value = "";
+  cardForm.querySelector("#input-card-link").value = "";
+  handleTogglePopup(cardPopup);
+});
+
+imageCloseBtn.addEventListener("click", function () {
+  handleTogglePopup(imagePopup);
+});
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
-  let nameInput = profileForm.querySelector(".form__input_el_name").value;
-  let jobInput = profileForm.querySelector(".form__input_el_about").value;
+  const nameInput = profileForm.querySelector("#input-profile-name").value;
+  const aboutInput = profileForm.querySelector("#input-profile-about").value;
 
   document.querySelector(".profile__name").textContent = nameInput;
-  document.querySelector(".profile__description").textContent = jobInput;
+  document.querySelector(".profile__about").textContent = aboutInput;
 
-  handleClosePopup(profilePopup);
+  handleTogglePopup(profilePopup);
+}
+
+function handleCardFormSubmit(evt) {
+  evt.preventDefault();
+
+  const titleInput = cardForm.querySelector("#input-card-title").value;
+  const linkInput = cardForm.querySelector("#input-card-link").value;
+
+  const card = createCard(titleInput, linkInput);
+  cardsContent.prepend(card);
+
+  handleTogglePopup(cardPopup);
 }
 
 loadInitialCards(initialCards);
 profileForm.addEventListener("submit", handleProfileFormSubmit);
+cardForm.addEventListener("submit", handleCardFormSubmit);

@@ -18,29 +18,26 @@
       <template class="template">
         <li class="card">
           <img src=" " alt="" class="card__image" />
-          <button class="card__trash-button">
+          <button class="card__trash-btn">
             <img
               src="./images/cards/trash.svg"
-              alt="Imagen del boton para eliminar tarjeta"
-              class="card__trash-button-image"
+              alt="Boton para eliminar la tarjeta"
+              class="card__trash-btn-image"
             />
           </button>
           <div class="card__info">
             <p class="card__title"></p>
-            <button class="card__like-button"></button>
+            <button class="card__like-btn"></button>
           </div>
         </li>
       </template>
-
-      <!-- src="./images/cards/Bosque-de-Salt-Lake.png " -->
-
       <section class="popup" id="profile-popup">
         <div class="popup__container">
           <form class="form" id="profile-form">
             <button
               class="form__close-button"
               type="button"
-              id="close-profile-button"
+              id="profile-close-btn"
             >
               <img
                 class="form__close-button-image"
@@ -51,28 +48,86 @@
             <fieldset class="form__fieldset">
               <h2 class="form__title">Editar Perfil</h2>
               <input
-                class="form__input form__input_el_name"
+                class="form__input"
                 type="text"
                 placeholder="Nombre"
                 required
-                id="name"
+                id="input-profile-name"
                 name="name"
                 minlength="2"
                 maxlength="40"
               />
               <input
-                class="form__input form__input_el_about"
+                class="form__input"
                 type="text"
                 placeholder="Acerca de mi"
                 required
-                id="about"
+                id="input-profile-about"
                 name="about"
                 minlength="2"
                 maxlength="200"
               />
-              <button class="form__save-button" type="submit">Guardar</button>
+              <button class="form__submit-btn" type="submit">Guardar</button>
             </fieldset>
           </form>
+        </div>
+      </section>
+
+      <section class="popup" id="card-popup">
+        <div class="popup__container">
+          <form class="form" id="card-form">
+            <button
+              class="form__close-button"
+              type="button"
+              id="card-close-btn"
+            >
+              <img
+                class="form__close-button-image"
+                src="./images/profile/Close.png"
+                alt="Boton para cerrar ventana"
+              />
+            </button>
+            <fieldset class="form__fieldset">
+              <h2 class="form__title">Nuevo lugar</h2>
+              <input
+                class="form__input"
+                type="text"
+                placeholder="Título"
+                required
+                id="input-card-title"
+                name="title"
+                minlength="2"
+                maxlength="40"
+              />
+              <input
+                class="form__input"
+                type="url"
+                placeholder="Enlace a la imagen"
+                required
+                id="input-card-link"
+                name="link"
+              />
+              <button class="form__submit-btn" type="submit">Crear</button>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+
+      <section class="popup image-popup" id="image-popup">
+        <div class="popup__container popup__image-container">
+          <button class="popup__close-btn" type="button" id="image-close-btn">
+            <img
+              class="popup__close-btn-image"
+              src="./images/profile/Close.png"
+              alt="Boton para cerrar ventana"
+            />
+          </button>
+          <img
+            src="https://practicum-content.s3.us-west-1.amazonaws.com/new-markets/WEB_sprint_5/ES/lake-louise.jpg"
+            alt=""
+            class="popup__expanded-image"
+          />
+          <p class="popup__image-title">Lago san Pablo</p>
         </div>
       </section>
 
@@ -100,24 +155,24 @@
               <div class="profile__info">
                 <h1 class="profile__name">Jacques Cousteau</h1>
                 <button
-                  class="profile__edit-button"
+                  class="profile__open-btn"
                   type="button"
-                  id="open-profile-button"
+                  id="profile-open-btn"
                 >
                   <img
                     src="./images/profile/Edit.png"
-                    alt="Botón editar perfil"
-                    class="profile__edit-button-image"
+                    alt="Botón para editar perfil"
+                    class="profile__open-btn-image"
                   />
                 </button>
-                <p class="profile__description">Explorador</p>
+                <p class="profile__about">Explorador</p>
               </div>
             </div>
-            <button class="add-button" type="button">
+            <button class="profile__card-btn" type="button" id="card-open-btn">
               <img
                 src="./images/profile/Add.png"
-                alt="Botón agregar perfil"
-                class="add-button__image"
+                alt="Botón para agregar nueva tarjeta de imagen"
+                class="profile__card-btn-image"
               />
             </button>
           </div>

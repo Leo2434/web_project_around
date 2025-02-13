@@ -71,7 +71,7 @@
   border-color: #c4c4c4;
 }
 
-.form__save-button {
+.form__submit-btn {
   width: 358px;
   height: 50px;
   background-color: #000;
@@ -84,12 +84,12 @@
   margin: 48px auto 0;
 }
 
-.form__save-button:hover {
+.form__submit-btn:hover {
   opacity: 0.8;
   cursor: pointer;
 }
 
-@media screen and (min-width: 320px) and (max-width: 650px) {
+@media screen and (min-width: 315px) and (max-width: 650px) {
   .form {
     width: 282px;
     height: 322px;
@@ -114,7 +114,7 @@
     height: 26px;
     font-size: 14px;
   }
-  .form__save-button {
+  .form__submit-btn {
     width: 238px;
     height: 46px;
     margin: 46px auto 0;
