@@ -16,11 +16,11 @@ Por otra parte, el desarrollo de componentes se lo llevara a cabo de una manera 
 
 El objetivo de dicho proyecto es desarrollar una página interactiva en la que los usuarios pueden añadir, eliminar o dar "me gusta" a las fotos de una galeria de lugares turisticos. Todo esto mediante el uso de formularios modales emergentes que se despliegan con ayuda de codigo Javascript.
 
-El diseño es responsivo: la anchura del área de contenido debe cambiar en función de la anchura de la ventana del navegador.
-El ancho mínimo de la ventana es de 320px (una tarjeta en una fila).
-El ancho máximo de la ventana es de 1280px (tres tarjetas en una fila).
-El cuadro emergente "Editar perfil" debe abrirse una vez que el usuario haga clic en el botón "Editar", y cerrarse al hacer clic en el botón de cierre de la esquina superior derecha.
-El formulario emergente debe permitir editar el nombre y el trabajo al que se dedica la persona del perfil y guardar los cambios.
+- El diseño es responsivo: la anchura del área de contenido debe cambiar en función de la anchura de la ventana del navegador.
+- El ancho mínimo de la ventana es de 320px (una tarjeta en una fila).
+- El ancho máximo de la ventana es de 1280px (tres tarjetas en una fila).
+- Un cuadro emergente "Editar perfil" que debe mostrarse una vez que el usuario haga clic en el botón "Editar", y ocultarse al hacer clic en el botón de cierre de la esquina superior derecha.
+- El formulario emergente debe permitir editar el nombre y el trabajo al que se dedica la persona del perfil y reflejar los cambios en la pagina.
 
 ### Imagen del formulario emergente para editar el perfil:
 
@@ -48,13 +48,38 @@ Se tomo como base los diseños de las distintas resoluciones del editor gráfico
 
 3. La rama Hotfix se utilizá para la corrección de errores, por ejemplo el header esta incompleto se crea una rama hotfix/header, y una vez solucionados los errores se fusionan nuevamente con main y despues se eliminan.
 
-## Cosas que se aprendío de este proyecto:
+### Cosas aprendidas en la primera parte:
 
 1.  Fundamentos basicos de Javascript: Aprendi las cosas basicas de este lenguaje como: variables, funciones, addEventListeners y modales emergentes; Asi como tambien a seleccionar y controlar el contenido de los elementos de HTML con propiedades como: querySelector, innerHTML y textContent. Esto me permitió reaccionar a las acciones del usuario y actualizar la interfaz de forma dinámica.
 
 2.  Manipulación del DOM: Trabaje con el DOM (Document Object Model) para poder acceder y modificar los elementos HTML de mi página web de manera programática. Esto me dio la habilidad de cambiar contenido, agregar o quitar elementos, y modificar estilos en tiempo real para asi poder crear una experiencia más personalizada para el usuario.
 
 3.  Uso de Git y ramas: Aprendi a trabajar profesionalmente con Git, creando ramas para cada componente del proyecto. Esto me permitió organizar mejor mi trabajo y tener la capacidad de colaborar eficientemente con un equipo, ya que podía hacer cambios en diferentes partes del proyecto sin interferir con el código principal. Además, al fusionar las ramas, aprendi a manejar errores, bugs, y asegurarme de que todo se integre correctamente.
+
+## Segunda Parte
+
+La segunda entrega del proyecto se enfoca en la funcionalidad de la pagina, en donde se aplican muchas mas tecnicas y metodos de programacion de Javascript.
+
+### Funcionalidades agregadas:
+
+- Cuando se carga la página, deberían aparecer seis tarjetas automaticamente mediante JavaScript.
+- Un nuevo formulario emergente que para agregar una nueva tarjeta a la galeria.
+- Programa el botón de "Me gusta" en las tarjetas, si el usuario hace clic en el, el corazón alterna su color entre blanco y negro.
+- Agregar el boton trash para remover una tarjeta de la galeria.
+- Al seleccionar una imágen, esta deberá aparecer como cuadro emergente, es decir, al hacer click dicha imágen se expandira junto a su respectivo nombre y se ajustara su tamaño dependiendo la resolución del dispositivo.
+
+### Imagen del diseño de los cuadros emergentes:
+
+![Imagen del formulario emergente para editar un card](./images/Formulario_card.jpg)
+![Imagen del formulario emergente para vizualizar la imagen de un card](./images/IMAGE_POPUP.jpg)
+
+### Cosas aprendidas en la segunda parte:
+
+1. Adquirí un mejor entendimiento sobre el lenguaje Javascript y la lógica de los arrays, especialmente en lo que respecta al manejo de sus objetos y propiedades.
+
+2. Aprendí a utilizar la etiqueta template y nodos para implementar varias funciones que facilitaron la interacción con los elementos html, como su creación y eliminación.
+
+3. Aprendí a resolver conflictos entre ramas en un proyecto, simulando intencionalmente un error, y utilizando VSCODE para solucionarlo eficientemente.
 
 ## Técnologías utilizadas:
 
