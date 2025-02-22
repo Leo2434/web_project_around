@@ -58,7 +58,6 @@ function createCard(title, link) {
     .addEventListener("click", function (evt) {
       evt.target.classList.toggle("card__black-like-btn");
     });
-
   // evt.target.style.backgroundImage = "url('../images/cards/black-like.svg')";
   // Esta forma tambien funciona pero no permite alternar la url con cada click
 
@@ -112,6 +111,23 @@ imageCloseBtn.addEventListener("click", function () {
   handleTogglePopup(imagePopup);
 });
 
+// Cerrar cualquier formulario abierto al presionar la tecla ESC
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape" && imagePopup.classList.contains("popup_opened")) {
+    handleTogglePopup(imagePopup);
+  } else if (
+    event.key === "Escape" &&
+    cardPopup.classList.contains("popup_opened")
+  ) {
+    handleTogglePopup(cardPopup);
+  } else if (
+    event.key === "Escape" &&
+    profilePopup.classList.contains("popup_opened")
+  ) {
+    handleTogglePopup(profilePopup);
+  }
+});
+
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
@@ -129,10 +145,11 @@ function handleCardFormSubmit(evt) {
 
   const titleInput = cardForm.querySelector("#input-card-title").value;
   const linkInput = cardForm.querySelector("#input-card-link").value;
-
   const card = createCard(titleInput, linkInput);
   cardsContent.prepend(card);
 
+  cardForm.querySelector("#input-card-title").value = "";
+  cardForm.querySelector("#input-card-link").value = "";
   handleTogglePopup(cardPopup);
 }
 
