@@ -81,6 +81,29 @@ La segunda entrega del proyecto se enfoca en la funcionalidad de la pagina, en d
 
 3. Aprendí a resolver conflictos entre ramas en un proyecto, simulando intencionalmente un error, y utilizando VSCODE para solucionarlo eficientemente.
 
+## Tercera Parte
+
+En la tercera entrega del proyecto se requiere validar todos los formularios del proyecto y mejorar la experiencia del usuario en cuanto a las ventanas emergentes, aplicando mas tecnicas y metodos de programacion de Javascript.
+
+### Funcionalidades agregadas:
+
+- Validar el formulario "Editar perfil" mediante JavaScript. Si un campo no pasa la validación, debajo de este campo debe aparecer un mensaje de error personalizado de color rojo utilizando los mensajes de error por defecto del navegador y el boton de envio se debe deshabilitar.
+- Validar del formulario "Nuevo lugar", de igual forma con el mensaje de error y el envio deshabilitado.
+- Programar una función que permita a los usuarios cerrar cualquiera de las ventanas emergentes haciendo clic en la superposición, es decir, en cualquier lugar fuera de los bordes de la ventana emergente.
+- Programar una función que permita a los usuarios cerrar la ventana emergente pulsando la tecla Esc.
+
+### Imagen de la validacion de los formularios:
+
+![Imagen de la validacion de los formularios emergentes](./images/validar-formulario.jpg)
+
+### Cosas aprendidas en la tercera parte:
+
+1. Adquirí un mejor entendimiento sobre como conectar los métodos de validación como detectores y controladores de JavaScript con el DOM.
+
+2. Aprendí varias técnicas de interacción con el usuario para mejorar la experiencia de uso al incorporar la validacion de campos en tiempo real.
+
+3. He aprendido a controlar los eventos del teclado y del ratón, las técnicas de propagación y delegación de eventos asi como tambien, la la forma de utilizarlas para mantener un código estructurado y ordenado.
+
 ## Técnologías utilizadas:
 
 <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-plain.svg" title="HTML5" alt="HTML" width="40" height="40"/>&nbsp;

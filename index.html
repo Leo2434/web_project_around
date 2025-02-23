@@ -33,7 +33,7 @@
       </template>
       <section class="popup" id="profile-popup">
         <div class="popup__container">
-          <form class="form" id="profile-form">
+          <form class="form" id="profile-form" novalidate>
             <button
               class="form__close-button"
               type="button"
@@ -52,21 +52,23 @@
                 type="text"
                 placeholder="Nombre"
                 required
-                id="input-profile-name"
-                name="name"
+                id="name-input"
+                name="name-input"
                 minlength="2"
                 maxlength="40"
               />
+              <span class="form__input-error" id="name-input-error"></span>
               <input
                 class="form__input"
                 type="text"
                 placeholder="Acerca de mi"
                 required
-                id="input-profile-about"
-                name="about"
+                id="about-input"
+                name="about-input"
                 minlength="2"
                 maxlength="200"
               />
+              <span class="form__input-error" id="about-input-error"></span>
               <button class="form__submit-btn" type="submit">Guardar</button>
             </fieldset>
           </form>
@@ -74,7 +76,7 @@
       </section>
       <section class="popup" id="card-popup">
         <div class="popup__container">
-          <form class="form" id="card-form">
+          <form class="form" id="card-form" novalidate>
             <button
               class="form__close-button"
               type="button"
@@ -93,19 +95,21 @@
                 type="text"
                 placeholder="Título"
                 required
-                id="input-card-title"
-                name="title"
+                id="title-input"
+                name="title-input"
                 minlength="2"
-                maxlength="40"
+                maxlength="30"
               />
+              <span class="form__input-error" id="title-input-error"></span>
               <input
                 class="form__input"
                 type="url"
                 placeholder="Enlace a la imagen"
                 required
-                id="input-card-link"
-                name="link"
+                id="link-input"
+                name="link-input"
               />
+              <span class="form__input-error" id="link-input-error"></span>
               <button class="form__submit-btn" type="submit">Crear</button>
             </fieldset>
           </form>
@@ -180,5 +184,6 @@
       </footer>
     </div>
     <script src="scripts/index.js"></script>
+    <script src="scripts/validate.js"></script>
   </body>
 </html>

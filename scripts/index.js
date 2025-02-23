@@ -10,6 +10,7 @@ const cardOpenBtn = document.querySelector("#card-open-btn");
 const cardCloseBtn = document.querySelector("#card-close-btn");
 const imagePopup = document.querySelector("#image-popup");
 const imageCloseBtn = document.querySelector("#image-close-btn");
+// const page = document.querySelector(".page");
 
 const initialCards = [
   {
@@ -82,14 +83,14 @@ function createCard(title, link) {
 }
 
 function handleTogglePopup(popupElement) {
-  popupElement.classList.toggle("popup_opened");
+  popupElement.classList.toggle("popup__opened");
 }
 
 profileOpenBtn.addEventListener("click", function () {
   const name = document.querySelector(".profile__name").textContent;
   const about = document.querySelector(".profile__about").textContent;
-  profileForm.querySelector("#input-profile-name").value = name;
-  profileForm.querySelector("#input-profile-about").value = about;
+  profileForm.querySelector("#name-input").value = name;
+  profileForm.querySelector("#about-input").value = about;
   handleTogglePopup(profilePopup);
 });
 
@@ -102,8 +103,8 @@ cardOpenBtn.addEventListener("click", function () {
 });
 
 cardCloseBtn.addEventListener("click", function () {
-  cardForm.querySelector("#input-card-title").value = "";
-  cardForm.querySelector("#input-card-link").value = "";
+  cardForm.querySelector("#title-input").value = "";
+  cardForm.querySelector("#link-input").value = "";
   handleTogglePopup(cardPopup);
 });
 
@@ -113,16 +114,19 @@ imageCloseBtn.addEventListener("click", function () {
 
 // Cerrar cualquier formulario abierto al presionar la tecla ESC
 document.addEventListener("keydown", function (event) {
-  if (event.key === "Escape" && imagePopup.classList.contains("popup_opened")) {
+  if (
+    event.key === "Escape" &&
+    imagePopup.classList.contains("popup__opened")
+  ) {
     handleTogglePopup(imagePopup);
   } else if (
     event.key === "Escape" &&
-    cardPopup.classList.contains("popup_opened")
+    cardPopup.classList.contains("popup__opened")
   ) {
     handleTogglePopup(cardPopup);
   } else if (
     event.key === "Escape" &&
-    profilePopup.classList.contains("popup_opened")
+    profilePopup.classList.contains("popup__opened")
   ) {
     handleTogglePopup(profilePopup);
   }
@@ -131,8 +135,8 @@ document.addEventListener("keydown", function (event) {
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
-  const nameInput = profileForm.querySelector("#input-profile-name").value;
-  const aboutInput = profileForm.querySelector("#input-profile-about").value;
+  const nameInput = profileForm.querySelector("#name-input").value;
+  const aboutInput = profileForm.querySelector("#about-input").value;
 
   document.querySelector(".profile__name").textContent = nameInput;
   document.querySelector(".profile__about").textContent = aboutInput;
@@ -143,15 +147,35 @@ function handleProfileFormSubmit(evt) {
 function handleCardFormSubmit(evt) {
   evt.preventDefault();
 
-  const titleInput = cardForm.querySelector("#input-card-title").value;
-  const linkInput = cardForm.querySelector("#input-card-link").value;
+  const titleInput = cardForm.querySelector("#title-input").value;
+  const linkInput = cardForm.querySelector("#link-input").value;
   const card = createCard(titleInput, linkInput);
   cardsContent.prepend(card);
 
-  cardForm.querySelector("#input-card-title").value = "";
-  cardForm.querySelector("#input-card-link").value = "";
+  cardForm.querySelector("#title-input").value = "";
+  cardForm.querySelector("#link-input").value = "";
   handleTogglePopup(cardPopup);
 }
+
+const setPopupEventListeners = (settings) => {
+  const popupList = Array.from(
+    document.querySelectorAll(settings.popupSelector)
+  );
+  popupList.forEach((popupElement) => {
+    // Cerrar cualquier formulario abierto al dar click en la superposición
+    popupElement.addEventListener("click", function (evt) {
+      // Verifica si el clic ocurrió fuera de la ventana modal
+      if (evt.target.classList.contains(settings.popupOpenedClass)) {
+        handleTogglePopup(evt.target);
+      }
+    });
+  });
+};
+
+setPopupEventListeners({
+  popupSelector: ".popup",
+  popupOpenedClass: "popup__opened",
+});
 
 loadInitialCards(initialCards);
 profileForm.addEventListener("submit", handleProfileFormSubmit);
