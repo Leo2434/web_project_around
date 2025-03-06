@@ -10,7 +10,6 @@ const cardOpenBtn = document.querySelector("#card-open-btn");
 const cardCloseBtn = document.querySelector("#card-close-btn");
 const imagePopup = document.querySelector("#image-popup");
 const imageCloseBtn = document.querySelector("#image-close-btn");
-// const page = document.querySelector(".page");
 
 const initialCards = [
   {
