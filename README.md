@@ -104,6 +104,32 @@ En la tercera entrega del proyecto se requiere validar todos los formularios del
 
 3. He aprendido a controlar los eventos del teclado y del ratón, las técnicas de propagación y delegación de eventos asi como tambien, la la forma de utilizarlas para mantener un código estructurado y ordenado.
 
+## Cuarta Parte
+
+En la cuarta entrega del proyecto se debe aplicar la Programación Orientada a Objetos (POO) para desarrollar y agregar clases al proyecto mediante Javascript. Durante esta fase, se llevara a cabo una refactorización del código, lo que implica sustituir una gran parte del código anterior con el contenido de las nuevas clases. Además, el proyecto se reorganizara en módulos utilizando las sentencias de export e import.
+
+### Funcionalidades agregadas:
+
+-El primer requisito es agregar las clases Card y FormValidator al código y asegurarte de que cada una de ellas realiza una tarea específica. Estas clases deben contener todo el código necesario para realizar sus respectivas tareas.
+
+-El segundo requisito es dividir el código JavaScript en módulos. El proyecto incluirá cuatro scripts:
+
+    1. Card.js contendrá el código de la clase Card.
+    2. FormValidator.js contendrá el código de la clase FormValidator.
+    3. utils.js contendrá los controladores de eventos y la función que abre/cierra las ventanas modales.
+    4. El archivo index.js contendrá el resto del código (nos referimos a este archivo tanto como index.js o como script.js son que convenciones de nomenclatura comunes para el archivo de script principal).
+
+- Las clases Card y FormValidator deben ser exportadas desde sus archivos correspondientes, y luego se debe importarlas e implementarlas dentro de index.js.
+- Asegúrate de que los archivos JS están conectados a index.html como módulos con type="module".
+
+### Cosas aprendidas en la cuarta parte:
+
+1. Aprendi cómo utilizar la Programación Orientada a Objetos para estructurar el código mediante clases.
+
+2. Comprendi la importancia de la refactorización para mejorar la organización y eficiencia del código.
+
+3. Entendi la manera en que los módulos permiten dividir el código en partes reutilizables y conectarlas con export e import.
+
 ## Técnologías utilizadas:
 
 <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-plain.svg" title="HTML5" alt="HTML" width="40" height="40"/>&nbsp;

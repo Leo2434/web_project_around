@@ -1,15 +1,23 @@
-const cardTemplate = document.querySelector(".template");
-const cardsContent = document.querySelector(".cards__content");
-const profilePopup = document.querySelector("#profile-popup");
-const profileForm = document.querySelector("#profile-form");
+import Card from "./Card.js";
+import FormValidator from "./FormValidator.js";
+import {
+  handleTogglePopup,
+  handleProfileFormSubmit,
+  handleCardFormSubmit,
+} from "./utils.js";
+
+export const cardsContent = document.querySelector(".cards__content");
+export const profilePopup = document.querySelector("#profile-popup");
+export const profileForm = document.querySelector("#profile-form");
+export const cardPopup = document.querySelector("#card-popup");
+export const cardForm = document.querySelector("#card-form");
 const profileOpenBtn = document.querySelector("#profile-open-btn");
 const profileCloseBtn = document.querySelector("#profile-close-btn");
-const cardPopup = document.querySelector("#card-popup");
-const cardForm = document.querySelector("#card-form");
 const cardOpenBtn = document.querySelector("#card-open-btn");
 const cardCloseBtn = document.querySelector("#card-close-btn");
 const imagePopup = document.querySelector("#image-popup");
 const imageCloseBtn = document.querySelector("#image-close-btn");
+export default imagePopup;
 
 const initialCards = [
   {
@@ -38,52 +46,14 @@ const initialCards = [
   },
 ];
 
-function loadInitialCards(initialCards) {
-  initialCards.forEach(function (item) {
-    const card = createCard(item.name, item.link);
-    cardsContent.append(card);
-  });
-}
-
-function createCard(title, link) {
-  const cardElement = cardTemplate
-    .cloneNode(true)
-    .content.querySelector(".card");
-  cardElement.querySelector(".card__title").textContent = title;
-  const cardImage = cardElement.querySelector(".card__image");
-  cardImage.src = link;
-  cardImage.alt = title;
-  cardElement
-    .querySelector(".card__like-btn")
-    .addEventListener("click", function (evt) {
-      evt.target.classList.toggle("card__black-like-btn");
-    });
-  // evt.target.style.backgroundImage = "url('../images/cards/black-like.svg')";
-  // Esta forma tambien funciona pero no permite alternar la url con cada click
-
-  cardElement
-    .querySelector(".card__trash-btn")
-    .addEventListener("click", function (evt) {
-      const cardItem = evt.target.closest(".card");
-      cardItem.remove();
-    });
-
-  cardImage.addEventListener("click", function (evt) {
-    const link = evt.target.parentElement.querySelector(".card__image").src;
-    imagePopup.querySelector(".popup__expanded-image").src = link;
-
-    const title =
-      evt.target.parentElement.querySelector(".card__title").textContent;
-    imagePopup.querySelector(".popup__image-title").textContent = title;
-
-    handleTogglePopup(imagePopup);
-  });
-  return cardElement;
-}
-
-function handleTogglePopup(popupElement) {
-  popupElement.classList.toggle("popup__opened");
-}
+export const settings = {
+  formSelector: ".form",
+  inputSelector: ".form__input",
+  submitButtonSelector: ".form__submit-btn",
+  inactiveButtonClass: "form__submit-btn_disabled",
+  inputErrorClass: "form__input_type_error",
+  errorClass: "form__input-error_visible",
+};
 
 profileOpenBtn.addEventListener("click", function () {
   const name = document.querySelector(".profile__name").textContent;
@@ -93,17 +63,18 @@ profileOpenBtn.addEventListener("click", function () {
   handleTogglePopup(profilePopup);
 });
 
-profileCloseBtn.addEventListener("click", function () {
-  handleTogglePopup(profilePopup);
-});
-
 cardOpenBtn.addEventListener("click", function () {
   handleTogglePopup(cardPopup);
 });
 
+profileCloseBtn.addEventListener("click", function () {
+  handleTogglePopup(profilePopup);
+});
+
 cardCloseBtn.addEventListener("click", function () {
-  cardForm.querySelector("#title-input").value = "";
+  cardForm.querySelector("#card-name-input").value = "";
   cardForm.querySelector("#link-input").value = "";
+
   handleTogglePopup(cardPopup);
 });
 
@@ -111,7 +82,6 @@ imageCloseBtn.addEventListener("click", function () {
   handleTogglePopup(imagePopup);
 });
 
-// Cerrar cualquier formulario abierto al presionar la tecla ESC
 document.addEventListener("keydown", function (event) {
   if (
     event.key === "Escape" &&
@@ -131,31 +101,6 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
-
-  const nameInput = profileForm.querySelector("#name-input").value;
-  const aboutInput = profileForm.querySelector("#about-input").value;
-
-  document.querySelector(".profile__name").textContent = nameInput;
-  document.querySelector(".profile__about").textContent = aboutInput;
-
-  handleTogglePopup(profilePopup);
-}
-
-function handleCardFormSubmit(evt) {
-  evt.preventDefault();
-
-  const titleInput = cardForm.querySelector("#title-input").value;
-  const linkInput = cardForm.querySelector("#link-input").value;
-  const card = createCard(titleInput, linkInput);
-  cardsContent.prepend(card);
-
-  cardForm.querySelector("#title-input").value = "";
-  cardForm.querySelector("#link-input").value = "";
-  handleTogglePopup(cardPopup);
-}
-
 const setPopupEventListeners = (settings) => {
   const popupList = Array.from(
     document.querySelectorAll(settings.popupSelector)
@@ -171,11 +116,28 @@ const setPopupEventListeners = (settings) => {
   });
 };
 
+function loadInitialCards(initialCards) {
+  initialCards.forEach(function (item) {
+    const card = new Card(item.name, item.link);
+    cardsContent.append(card.getHTMLCard());
+  });
+}
+
+function startValidation(settings) {
+  const formList = Array.from(document.querySelectorAll(settings.formSelector));
+
+  formList.forEach((formElement) => {
+    const formValidator = new FormValidator(settings, formElement);
+    formValidator.enableValidation();
+  });
+}
+
 setPopupEventListeners({
   popupSelector: ".popup",
   popupOpenedClass: "popup__opened",
 });
-
-loadInitialCards(initialCards);
 profileForm.addEventListener("submit", handleProfileFormSubmit);
 cardForm.addEventListener("submit", handleCardFormSubmit);
+loadInitialCards(initialCards);
+
+startValidation(settings);
