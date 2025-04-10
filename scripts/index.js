@@ -1,28 +1,16 @@
 import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
-import {
-  handleTogglePopup,
-  handleProfileFormSubmit,
-  handleCardFormSubmit,
-} from "./utils.js";
 import Section from "./Section.js";
 import PopupWithForm from "./PopupWithForm.js";
 import PopupWithImage from "./PopupWithImage.js";
 import UserInfo from "./UserInfo.js";
-
-export const cardsContent = ".cards__content";
 export const profilePopup = document.querySelector("#profile-popup");
 export const profileForm = document.querySelector("#profile-form");
 export const cardPopup = document.querySelector("#card-popup");
 export const cardForm = document.querySelector("#card-form");
 const profileOpenBtn = document.querySelector("#profile-open-btn");
-// const profileCloseBtn = document.querySelector("#profile-close-btn");
 const cardOpenBtn = document.querySelector("#card-open-btn");
-// const cardCloseBtn = document.querySelector("#card-close-btn");
-// const imagePopup = document.querySelector("#image-popup");
-// const imageCloseBtn = document.querySelector("#image-close-btn");
-// const nameInput = "#name-input";
-// const aboutInput = "#about-input";
+const cardsContainerSelector = ".cards__content";
 
 const initialCards = [
   {
@@ -78,7 +66,9 @@ profileOpenBtn.addEventListener("click", function () {
 
   profilePopupObj.setInputValues(currentUserInfo);
 
-  //reset.validation SUPUESTAMENTE
+  const formElement = profilePopup.querySelector(settings.formSelector);
+  const formValidator = new FormValidator(settings, formElement);
+  formValidator.resetValidation();
 
   profilePopupObj.open();
 });
@@ -93,7 +83,6 @@ cardOpenBtn.addEventListener("click", function () {
           link: data.secondInput,
         },
       ];
-
       const cardStn = new Section(
         {
           items: cards,
@@ -105,7 +94,7 @@ cardOpenBtn.addEventListener("click", function () {
             cardStn.addItem(card);
           },
         },
-        cardsContent
+        cardsContainerSelector
       );
       cardStn.renderItems();
     },
@@ -114,42 +103,13 @@ cardOpenBtn.addEventListener("click", function () {
       secondSelector: "#link-input",
     }
   );
+
+  const formElement = cardPopup.querySelector(settings.formSelector);
+  const formValidator = new FormValidator(settings, formElement);
+  formValidator.resetValidation();
+
   cardPopupObj.open();
 });
-
-document.addEventListener("keydown", function (event) {
-  // if (
-  //   event.key === "Escape" &&
-  //   imagePopup.classList.contains("popup__opened")
-  // ) {
-  //   handleTogglePopup(imagePopup);
-  // } else if (
-  //   event.key === "Escape" &&
-  //   cardPopup.classList.contains("popup__opened")
-  // ) {
-  //   handleTogglePopup(cardPopup);
-  // } else if (
-  //   event.key === "Escape" &&
-  //   profilePopup.classList.contains("popup__opened")
-  // ) {
-  //   handleTogglePopup(profilePopup);
-  // }
-});
-
-const setPopupEventListeners = (settings) => {
-  const popupList = Array.from(
-    document.querySelectorAll(settings.popupSelector)
-  );
-  popupList.forEach((popupElement) => {
-    // Cerrar cualquier formulario abierto al dar click en la superposición
-    popupElement.addEventListener("click", function (evt) {
-      // Verifica si el clic ocurrió fuera de la ventana modal
-      if (evt.target.classList.contains(settings.popupOpenedClass)) {
-        handleTogglePopup(evt.target);
-      }
-    });
-  });
-};
 
 const cardSection = new Section(
   {
@@ -162,15 +122,10 @@ const cardSection = new Section(
       cardSection.addItem(card);
     },
   },
-  cardsContent
+  cardsContainerSelector
 );
 
 function loadInitialCards() {
-  // initialCards.forEach(function (item) {
-  //   const card = new Card(item.name, item.link);
-  //   cardsContent.append(card.getHTMLCard());
-  // });
-  //nuevo proceso con relaciones flexibles
   cardSection.renderItems();
 }
 
@@ -182,11 +137,6 @@ function startValidation(settings) {
     formValidator.enableValidation();
   });
 }
-
-setPopupEventListeners({
-  popupSelector: ".popup",
-  popupOpenedClass: "popup__opened",
-});
 
 loadInitialCards();
 

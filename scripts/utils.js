@@ -1,3 +1,4 @@
+/*
 import Card from "./Card.js";
 import {
   cardsContent,
@@ -46,3 +47,4 @@ export function handleCardFormSubmit(evt) {
   cardForm.querySelector("#link-input").value = "";
   handleTogglePopup(cardPopup);
 }
+*/

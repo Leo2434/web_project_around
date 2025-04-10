@@ -1,12 +1,9 @@
-import { handleTogglePopup } from "./utils.js";
-const cardTemplate = document.querySelector(".template");
-const imagePopup = document.querySelector("#image-popup");
-
 export default class Card {
   constructor(name, link, handleCardClick) {
     this.name = name;
     this.link = link;
     this._handleCardClick = handleCardClick;
+    this._cardTemplate = document.querySelector(".template");
   }
 
   _setEventListeners() {
@@ -29,7 +26,7 @@ export default class Card {
   }
 
   _cloneTemplate() {
-    return cardTemplate.cloneNode(true).content.querySelector(".card");
+    return this._cardTemplate.cloneNode(true).content.querySelector(".card");
   }
 
   _generateCard() {

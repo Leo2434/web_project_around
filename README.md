@@ -130,6 +130,26 @@ En la cuarta entrega del proyecto se debe aplicar la Programación Orientada a O
 
 3. Entendi la manera en que los módulos permiten dividir el código en partes reutilizables y conectarlas con export e import.
 
+## Quinta Parte
+
+En esta fase del proyecto se debe seguir refactorizando el codigo de javascript, asi como tambien se debe crear algunas clases más y acoplarlas mediante la Programación Orientada a Objetos (POO), lo que implica sustituir una gran parte del código anterior con el contenido de las nuevas clases. Además, se implementa una nueva forma de renderizar los elementos de la página con el uso del acoplamiento débil.
+
+### Funcionalidades agregadas:
+
+- Agregar las clases Section, Popup, PopupWithForm, PopupWithImages y UserInfo con sus respectivos parametros y metodos.
+- Cada clase debe realizar una tarea específica. Toda lógica relacionada a una tarea específica debe estar encapsulada en su respectiva clase.
+- Combinar las clases necesarias utilizando el acoplamiento débil.
+- Almacenar todas las clases en archivos separados.
+- El archivo index.js debe contener solamente el código para crear instancias de clases y agregar detectores de eventos específicos.
+
+### Cosas aprendidas:
+
+1. Aprendi cómo utilizar la herencia, el polimorfismo y el encapsulamiento de forma correcta.
+
+2. Comprendi la importancia de saber identificar bugs y errores para poder dar con la solucion rapidamente.
+
+3. Entendi la forma en que se usa el acoplamiento débil para conectar el index con el resto de sus clases manteniendo su independencia.
+
 ## Técnologías utilizadas:
 
 <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-plain.svg" title="HTML5" alt="HTML" width="40" height="40"/>&nbsp;
