@@ -39,7 +39,8 @@ export function handleCardFormSubmit(evt) {
   const cardNameInput = cardForm.querySelector("#card-name-input").value;
   const linkInput = cardForm.querySelector("#link-input").value;
   const card = new Card(cardNameInput, linkInput);
-  cardsContent.prepend(card.getHTMLCard());
+  const content = document.querySelector(cardsContent);
+  content.prepend(card.getHTMLCard());
 
   cardForm.querySelector("#card-name-input").value = "";
   cardForm.querySelector("#link-input").value = "";

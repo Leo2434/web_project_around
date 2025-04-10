@@ -1,11 +1,12 @@
-import imagePopup from "./index.js";
 import { handleTogglePopup } from "./utils.js";
 const cardTemplate = document.querySelector(".template");
+const imagePopup = document.querySelector("#image-popup");
 
 export default class Card {
-  constructor(name, link) {
+  constructor(name, link, handleCardClick) {
     this.name = name;
     this.link = link;
+    this._handleCardClick = handleCardClick;
   }
 
   _setEventListeners() {
@@ -22,15 +23,8 @@ export default class Card {
         cardItem.remove();
       });
 
-    this.cardImage.addEventListener("click", function (evt) {
-      const link = evt.target.parentElement.querySelector(".card__image").src;
-      imagePopup.querySelector(".popup__expanded-image").src = link;
-
-      const name =
-        evt.target.parentElement.querySelector(".card__name").textContent;
-      imagePopup.querySelector(".popup__image-name").textContent = name;
-
-      handleTogglePopup(imagePopup);
+    this.cardImage.addEventListener("click", (evt) => {
+      this._handleCardClick(evt);
     });
   }
 

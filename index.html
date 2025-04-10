@@ -17,8 +17,7 @@
     <div class="page">
       <template class="template">
         <li class="card">
-          popup__image
-          <img src=" " alt="" class="card__image" />
+          <img src="#" alt="Imagen" class="card__image" />
           <button class="card__trash-btn">
             <img
               src="./images/cards/trash.svg"
@@ -32,20 +31,17 @@
           </div>
         </li>
       </template>
+
       <section class="popup" id="profile-popup">
         <div class="popup__container">
+          <button class="popup__close" type="button" id="profile-close-btn">
+            <img
+              class="popup__close-image"
+              src="./images/profile/Close.png"
+              alt="Boton para cerrar ventana"
+            />
+          </button>
           <form class="form" id="profile-form" novalidate>
-            <button
-              class="form__close-button"
-              type="button"
-              id="profile-close-btn"
-            >
-              <img
-                class="form__close-button-image"
-                src="./images/profile/Close.png"
-                alt="Boton para cerrar ventana"
-              />
-            </button>
             <fieldset class="form__fieldset">
               <h2 class="form__title">Editar Perfil</h2>
               <input
@@ -75,20 +71,17 @@
           </form>
         </div>
       </section>
+
       <section class="popup" id="card-popup">
         <div class="popup__container">
+          <button class="popup__close" type="button" id="card-close-btn">
+            <img
+              class="popup__close-image"
+              src="./images/profile/Close.png"
+              alt="Boton para cerrar ventana"
+            />
+          </button>
           <form class="form" id="card-form" novalidate>
-            <button
-              class="form__close-button"
-              type="button"
-              id="card-close-btn"
-            >
-              <img
-                class="form__close-button-image"
-                src="./images/profile/Close.png"
-                alt="Boton para cerrar ventana"
-              />
-            </button>
             <fieldset class="form__fieldset">
               <h2 class="form__title">Nuevo lugar</h2>
               <input
@@ -116,11 +109,12 @@
           </form>
         </div>
       </section>
-      <section class="popup image-popup" id="image-popup">
-        <div class="popup__container popup__image-container">
-          <button class="popup__close-btn" type="button" id="image-close-btn">
+
+      <section class="popup popup_opacity_high" id="image-popup">
+        <div class="popup__container">
+          <button class="popup__close" type="button" id="image-close-btn">
             <img
-              class="popup__close-btn-image"
+              class="popup__close-image"
               src="./images/profile/Close.png"
               alt="Boton para cerrar ventana"
             />
@@ -142,6 +136,7 @@
         />
         <hr class="header__line" />
       </header>
+
       <main class="container">
         <section class="profile" id="profile">
           <div class="profile__columns">
