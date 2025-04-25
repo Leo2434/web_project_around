@@ -126,7 +126,6 @@ const cardPopupObj = new PopupWithForm(
                         })
                         .catch((err) => console.log(err));
                     },
-                    ".form__submit-btn",
                     evt
                   );
                   confirmationPopup.open();
@@ -204,7 +203,6 @@ api
                     })
                     .catch((err) => console.log(err));
                 },
-                ".form__submit-btn",
                 evt
               );
               confirmationPopup.open();
