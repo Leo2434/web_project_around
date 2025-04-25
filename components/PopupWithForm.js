@@ -15,12 +15,16 @@ export default class PopupWithForm extends Popup {
 
   setEventListeners() {
     super.setEventListeners();
-    this._popupForm.addEventListener("submit", (evt) => {
-      evt.preventDefault();
-      const data = this._getInputValues();
-      this._handleFormSubmit(data);
-      this.close();
-    });
+    this._popupForm.addEventListener(
+      "submit",
+      (evt) => {
+        evt.preventDefault();
+        this.renderLoading(true);
+        const data = this._getInputValues();
+        this._handleFormSubmit(data);
+      },
+      { once: true }
+    );
   }
 
   _getInputValues() {
@@ -32,8 +36,7 @@ export default class PopupWithForm extends Popup {
 
   close() {
     super.close();
-    this._firstElement.value = "";
-    this._secondElement.value = "";
+    this._popupForm.reset();
   }
 
   setInputValues({ name, about }) {

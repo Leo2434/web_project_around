@@ -36,8 +36,8 @@
         <div class="popup__container">
           <button class="popup__close" type="button" id="profile-close-btn">
             <img
-              class="popup__close-image"
-              src="./images/profile/Close.png"
+              class="popup__close-img"
+              src="./images/profile/Close_Button.svg"
               alt="Boton para cerrar ventana"
             />
           </button>
@@ -66,7 +66,14 @@
                 maxlength="200"
               />
               <span class="form__input-error" id="about-input-error"></span>
-              <button class="form__submit-btn" type="submit">Guardar</button>
+              <button
+                class="form__submit-btn"
+                type="submit"
+                save="Guardar"
+                saving="Guardando..."
+              >
+                Guardar
+              </button>
             </fieldset>
           </form>
         </div>
@@ -76,8 +83,8 @@
         <div class="popup__container">
           <button class="popup__close" type="button" id="card-close-btn">
             <img
-              class="popup__close-image"
-              src="./images/profile/Close.png"
+              class="popup__close-img"
+              src="./images/profile/Close_Button.svg"
               alt="Boton para cerrar ventana"
             />
           </button>
@@ -104,7 +111,14 @@
                 name="link-input"
               />
               <span class="form__input-error" id="link-input-error"></span>
-              <button class="form__submit-btn" type="submit">Crear</button>
+              <button
+                class="form__submit-btn"
+                type="submit"
+                save="Crear"
+                saving="Guardando..."
+              >
+                Crear
+              </button>
             </fieldset>
           </form>
         </div>
@@ -114,8 +128,8 @@
         <div class="popup__container">
           <button class="popup__close" type="button" id="image-close-btn">
             <img
-              class="popup__close-image"
-              src="./images/profile/Close.png"
+              class="popup__close-img"
+              src="./images/profile/Close_Button.svg"
               alt="Boton para cerrar ventana"
             />
           </button>
@@ -125,6 +139,65 @@
             class="popup__expanded-image"
           />
           <p class="popup__image-name"></p>
+        </div>
+      </section>
+
+      <section class="popup" id="confirmation-popup">
+        <div class="popup__container">
+          <button class="popup__close" type="button" id="image-close-btn">
+            <img
+              class="popup__close-img"
+              src="./images/profile/Close_Button.svg"
+              alt="Boton para cerrar ventana"
+            />
+          </button>
+          <form class="form form_height_low" id="card-form" novalidate>
+            <fieldset class="form__fieldset">
+              <h2 class="form__title form__title_padding_small">
+                ¿Estás seguro/a?
+              </h2>
+              <button
+                class="form__submit-btn form__submit-btn_margin_none"
+                type="submit"
+              >
+                Sí
+              </button>
+            </fieldset>
+          </form>
+        </div>
+      </section>
+
+      <section class="popup" id="avatar-popup">
+        <div class="popup__container">
+          <button class="popup__close" type="button" id="image-close-btn">
+            <img
+              class="popup__close-img"
+              src="./images/profile/Close_Button.svg"
+              alt="Boton para cerrar ventana"
+            />
+          </button>
+          <form class="form form_height_medium" id="card-form" novalidate>
+            <fieldset class="form__fieldset">
+              <h2 class="form__title">Cambiar foto de perfil</h2>
+              <input
+                class="form__input"
+                type="url"
+                placeholder="Enlace a la imagen"
+                required
+                id="link-input"
+                name="link-input"
+              />
+              <span class="form__input-error" id="link-input-error"></span>
+              <button
+                class="form__submit-btn"
+                type="submit"
+                save="Guardar"
+                saving="Guardando..."
+              >
+                Guardar
+              </button>
+            </fieldset>
+          </form>
         </div>
       </section>
 
@@ -143,6 +216,11 @@
             <div class="profile__column">
               <div class="profile__image">
                 <img src="#" alt="Avatar del perfil" class="profile__avatar" />
+                <button
+                  class="profile__avatar-btn"
+                  type="button"
+                  id="avatar-open-btn"
+                ></button>
               </div>
             </div>
             <div class="profile__column">
@@ -154,7 +232,7 @@
                   id="profile-open-btn"
                 >
                   <img
-                    src="./images/profile/Edit.png"
+                    src="./images/profile/Edit_Button.svg"
                     alt="Botón para editar perfil"
                     class="profile__open-btn-image"
                   />
@@ -164,7 +242,7 @@
             </div>
             <button class="profile__card-btn" type="button" id="card-open-btn">
               <img
-                src="./images/profile/Add.png"
+                src="./images/profile/Add_Button.svg"
                 alt="Botón para agregar nueva tarjeta de imagen"
                 class="profile__card-btn-image"
               />

@@ -1,13 +1,25 @@
 import api from "./Api.js";
 
 export default class Card {
-  constructor(name, link, id, isLiked, handleCardClick) {
+  constructor(name, link, id, isLiked, handleCardClick, handleTrashClick) {
     this.name = name;
     this.link = link;
     this.id = id;
     this.isLiked = isLiked;
     this._handleCardClick = handleCardClick;
+    this._handleTrashClick = handleTrashClick;
     this._cardTemplate = document.querySelector(".template");
+  }
+
+  _trash() {
+    api
+      .deleteCard(this.id)
+      .then((res) => {
+        // console.log("Carta eliminada:", res);
+        const cardItem = evt.target.closest(".card");
+        cardItem.remove();
+      })
+      .catch((err) => console.log(err));
   }
 
   _like() {
@@ -40,14 +52,7 @@ export default class Card {
     this.card
       .querySelector(".card__trash-btn")
       .addEventListener("click", (evt) => {
-        api
-          .deleteCard(this.id)
-          .then((res) => {
-            // console.log("Carta eliminada:", res);
-            const cardItem = evt.target.closest(".card");
-            cardItem.remove();
-          })
-          .catch((err) => console.log(err));
+        this._handleTrashClick({ evt, cardId: this.id });
       });
 
     this.cardImage.addEventListener("click", (evt) => {

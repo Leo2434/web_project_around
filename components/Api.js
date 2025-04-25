@@ -95,6 +95,25 @@ class Api {
       return Promise.reject(`Algo ha fallado: ${res.status}`);
     });
   }
+
+  updateAvatar(avatar) {
+    return fetch(`${this.baseUrl}/users/me/avatar`, {
+      method: "PATCH",
+      headers: this.headers,
+      body: JSON.stringify({
+        avatar,
+      }),
+    }).then((res) => {
+      if (res.ok) {
+        return res.json();
+      }
+      return Promise.reject(`Algo ha fallado: ${res.status}`);
+    });
+  }
+
+  confirmPromises(promises) {
+    return Promise.all(promises);
+  }
 }
 
 const api = new Api({

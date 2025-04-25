@@ -11,11 +11,6 @@ export default class Popup {
   close() {
     this._popupElement.classList.remove("popup__opened");
     //eliminar detectores luego de cerrar el popup
-    this._popupElement
-      .querySelector(".popup__close")
-      .removeEventListener("click", () => {
-        this.close();
-      });
     this._popupElement.removeEventListener("click", (evt) => {
       if (evt.target.classList.contains("popup__opened")) {
         this.close();
@@ -32,11 +27,13 @@ export default class Popup {
   }
 
   setEventListeners() {
-    this._popupElement
-      .querySelector(".popup__close")
-      .addEventListener("click", () => {
+    this._popupElement.querySelector(".popup__close").addEventListener(
+      "click",
+      (evt) => {
         this.close();
-      });
+      },
+      { once: true }
+    );
 
     this._popupElement.addEventListener("click", (evt) => {
       // Verifica si el clic ocurrió fuera de la ventana modal
@@ -57,5 +54,19 @@ export default class Popup {
         this.close();
       }
     });
+  }
+
+  renderLoading(isLoading) {
+    //cambiar el texto del botón hasta que se carguen los datos
+    const submitButton = this._popupElement.querySelector(
+      "button[type=submit]"
+    );
+    const save = submitButton.getAttribute("save");
+    const saving = submitButton.getAttribute("saving");
+    if (isLoading) {
+      submitButton.textContent = saving;
+    } else {
+      submitButton.textContent = save;
+    }
   }
 }

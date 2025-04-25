@@ -150,6 +150,18 @@ En esta fase del proyecto se debe seguir refactorizando el codigo de javascript,
 
 3. Entendi la forma en que se usa el acoplamiento débil para conectar el index con el resto de sus clases manteniendo su independencia.
 
+## Sexta Parte
+
+En esta ultima entrega del proyecto conectarás tu página web "Alrededor de los Estados Unidos" al servidor. Lo que implica agregar una nueva clase Api con la que se realizara todas las solicitudes respectivas al servidor privado de tripleten mediante un token personal. Además, se implementaran nuevas caracteristicas para mejorar la experiencia del usuario.
+
+### Funcionalidades agregadas y nuevas habilidades aprendidas:
+
+- Se implemento el uso de Apis realizando peticiones al servidor con fetch, con el fin de comprender el intercambio de informacion dentre aplicaciones, y sus respectivos métodos.
+- Los métodos(put, delete, post, get y patch), fueron muy utiles para refactorizar el codigo y obtener información para la funcionalidad de la página
+- Como prueba del punto anterior, se añadieron 2 ventanas modales(cambiar foto de perfil y eliminar una targeta), gracias a la herramienta "Network" de las herramientas de inspeccion de la pagina se pudo monitorear el estado de las solicitudes y sus respuestas.
+- Al pulsar el boton "Guardar" de los formularios cambia el texto a "Guardando.." mientras se cargan las solicitudes y los datos
+- Se modificaron un poco los archivos html y css, para que la nuevas caaracteristicas fueran posibles.
+
 ## Técnologías utilizadas:
 
 <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-plain.svg" title="HTML5" alt="HTML" width="40" height="40"/>&nbsp;

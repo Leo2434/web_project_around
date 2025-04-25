@@ -5,6 +5,14 @@
   border-radius: 10px;
 }
 
+.form_height_low {
+  height: 181px;
+}
+
+.form_height_medium {
+  height: 272px;
+}
+
 .form__fieldset {
   width: 358px;
   display: flex;
@@ -21,6 +29,10 @@
   font-weight: 900;
   margin: 0;
   padding: 34px 0 50px 0;
+}
+
+.form__title_padding_small {
+  padding: 34px 0 35px 0;
 }
 
 .form__input {
@@ -82,6 +94,10 @@
   line-height: 21.78px;
   text-align: center;
   margin: 48px 0 36px 0;
+}
+
+.form__submit-btn_margin_none {
+  margin: 0;
 }
 
 .form__submit-btn:hover {

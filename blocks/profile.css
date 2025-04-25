@@ -10,6 +10,7 @@
 .profile__image {
   width: 120px;
   overflow: hidden;
+  position: relative;
 }
 
 .profile__avatar {
@@ -17,11 +18,34 @@
   height: 120px;
   border-radius: 100%;
   object-fit: cover;
+  transition: opacity 0.3s ease; /* Transición suave para la opacidad */
 }
 
-.profile__avatar:hover {
+.profile__avatar-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centra el botón */
+  width: 26px;
+  height: 26px;
+  background-image: url("../images/profile/Avatar_Edit.svg");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  border: 0;
+  padding: 0;
+  opacity: 0; /* Inicialmente oculto */
   cursor: pointer;
-  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.profile__image:hover .profile__avatar {
+  opacity: 0.25;
+}
+
+.profile__image:hover .profile__avatar-btn {
+  opacity: 1; /* Muestra el botón al hacer hover en el contenedor */
 }
 
 .profile__info {
