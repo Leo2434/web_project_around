@@ -10,7 +10,7 @@ Por otra parte, el desarrollo de componentes se lo llevara a cabo de una manera 
 
 ### Imagen del diseño del proyecto llamado "Alrededor de los EE.UU":
 
-![Imagen del diseño del proyecto llamado "Alrededor de los EE.UU"](./images/Diseño_proyecto_around.png)
+![Imagen del diseño del proyecto llamado "Alrededor de los EE.UU"](./src/images/Diseño_proyecto_around.png)
 
 ## Funcionalidad:
 
@@ -24,7 +24,7 @@ El objetivo de dicho proyecto es desarrollar una página interactiva en la que l
 
 ### Imagen del formulario emergente para editar el perfil:
 
-![Imagen del formulario emergente para editar el perfil](./images/formulario-emergente.png)
+![Imagen del formulario emergente para editar el perfil](./src/images/formulario-emergente.png)
 
 ## Técnicas:
 
@@ -40,7 +40,7 @@ Se tomo como base los diseños de las distintas resoluciones del editor gráfico
 
 ### Esquema de ramas de git aplicadas en el desarrollo:
 
-![Imagen del Esquema de ramas de git del proyecto](./images/Esquema-de-ramas.png)
+![Imagen del Esquema de ramas de git del proyecto](./src/images/Esquema-de-ramas.png)
 
 1. La rama Features representá cada componente del sitio web, es decir se crearán ramas independientes, por ejemplo en la subrama feature/header se desarrollara el encabezado de la pagina.
 
@@ -70,8 +70,8 @@ La segunda entrega del proyecto se enfoca en la funcionalidad de la pagina, en d
 
 ### Imagen del diseño de los cuadros emergentes:
 
-![Imagen del formulario emergente para editar un card](./images/Formulario_card.jpg)
-![Imagen del formulario emergente para vizualizar la imagen de un card](./images/IMAGE_POPUP.jpg)
+![Imagen del formulario emergente para editar un card](./src/images/Formulario_card.jpg)
+![Imagen del formulario emergente para vizualizar la imagen de un card](./src/images/IMAGE_POPUP.jpg)
 
 ### Cosas aprendidas en la segunda parte:
 
@@ -94,7 +94,7 @@ En la tercera entrega del proyecto se requiere validar todos los formularios del
 
 ### Imagen de la validacion de los formularios:
 
-![Imagen de la validacion de los formularios emergentes](./images/validar-formulario.jpg)
+![Imagen de la validacion de los formularios emergentes](./src/images/validar-formulario.jpg)
 
 ### Cosas aprendidas en la tercera parte:
 
@@ -167,7 +167,7 @@ En esta ultima entrega del proyecto conectarás tu página web "Alrededor de los
 <img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-plain.svg" title="HTML5" alt="HTML" width="40" height="40"/>&nbsp;
 <img src="https://github.com/devicons/devicon/blob/master/icons/css3/css3-plain.svg" title="CSS3" alt="CSS" width="40" height="40"/>&nbsp;
 <img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-plain.svg" title="JavaScript" alt="JavaScript" width="40" height="40"/>&nbsp;
-<img src="./images/dom-logo.PNG" border="0"  title="DOM" alt="DOM" width="40" height="40"/>&nbsp;
+<img src="./src/images/dom-logo.PNG" border="0"  title="DOM" alt="DOM" width="40" height="40"/>&nbsp;
 <img src="https://github.com/devicons/devicon/blob/master/icons/git/git-plain.svg" title="Git" alt="Git" width="40" height="40"/>&nbsp;
 
 ---
