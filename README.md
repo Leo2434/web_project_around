@@ -174,4 +174,4 @@ En esta ultima entrega del proyecto conectarás tu página web "Alrededor de los
 
 ## Enlace a la Página de GitHub:
 
-https://leo2434.github.io/web_project_around/
+https://leo2434.github.io/web_project_around/src/index.html
